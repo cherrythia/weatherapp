@@ -62,7 +62,7 @@ function getMap() {
 	console.log("altitudeAccuracy that is to be sent to zoom is " + geoloc.altitudeAccuracy);
 	var mapOptions = {
 		center: new google.maps.LatLng(geoloc.lat,geoloc.lon),
-		zoom: 21,  												//got to do a lat accuracy here??
+		zoom: 18,  												//got to do a lat accuracy here??
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 		}
 	var map = new google.maps.Map(mapCanvas,mapOptions)

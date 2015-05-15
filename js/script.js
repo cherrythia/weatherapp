@@ -13,6 +13,7 @@ function success(position) {
     geoloc.lat = position.coords.latitude;
 	geoloc.lon = position.coords.longitude;
 	getMap();
+	console.log(geoloc);
 }
 
 function failure(error) {
@@ -27,6 +28,7 @@ function getWeather () {
 		getMap();
 		if (xhr.readyState === 4 && xhr.status === 200) {
 			var data = JSON.parse(xhr.responseText)
+			console.log(data);
 
 			//"wind speed" & "wind deg"
 			var wind = document.getElementById("wind");
@@ -37,9 +39,9 @@ function getWeather () {
 			var temp = document.getElementById("temp");
 			temp.innerHTML += Math.round(parseFloat(data.main.temp, 10) - 273);
 
-			/*var info = document.getElementById("info");
-			info.innerHTML = data.weather[0].icon;
-			*/
+			//Description of sky
+			var sky = document.getElementById("sky");
+			sky.innerHTML += data.weather[1].main;
 		}
 	}
 
@@ -53,7 +55,7 @@ function getMap() {
 	var mapCanvas = document.getElementById('map-canvas');
 	var mapOptions = {
 		center: new google.maps.LatLng(geoloc.lat,geoloc.lon),
-		zoom: 12,
+		zoom: 15,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 		}
 	var map = new google.maps.Map(mapCanvas,mapOptions)

@@ -5,8 +5,7 @@
 	<meta charset="utf-8"/> 
 	<title>My first Web Page</title>
 	<link rel="stylesheet" href="style/style.css"/>
-
-	<!--map connect to googlemap API-->
+	<!--js script dependent on google's script, js script has to go first-->
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<script src="js/script.js"></script>
 
@@ -17,12 +16,13 @@
 	<h3>Welcome Terry</h3>
 
 	<section>
-		<h5 id="wind">Wind Details: </h5>
 		<h5 id="temp">Temp Celsius: </h5>
+		<h5 id="wind">Wind Details: </h5>
+		<h5 id="sky">Description of sky: </h5>
 	</section>
 
 	<!--Map image is here-->
-	<h5>Image of your surrounding</h5>
+	<h4>Image of your surrounding</h4>
 	<div id="map-canvas"></div>
 
 </body>

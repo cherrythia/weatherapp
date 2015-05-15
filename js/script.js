@@ -55,9 +55,10 @@ function getWeather () {
 
 function getMap() {
 	var mapCanvas = document.getElementById('map-canvas');
+	console.log("altitudeAccuracy that is to be sent to zoom is " + geoloc.altitudeAccuracy);
 	var mapOptions = {
 		center: new google.maps.LatLng(geoloc.lat,geoloc.lon),
-		zoom: geoloc.altitudeAccuracy,  												//got to do a lat accuracy here??
+		zoom: 21,  												//got to do a lat accuracy here??
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 		}
 	var map = new google.maps.Map(mapCanvas,mapOptions)

@@ -43,7 +43,11 @@ function getWeather () {
 
 			//Description of sky
 			var sky = document.getElementById("sky");
-			sky.innerHTML += data.weather[1].main;
+			sky.innerHTML += data.weather[0].description;
+
+			//Humidity
+			var humidity = document.getElementById("humidity");
+			humidity.innerHTML += data.main.humidity + "%";
 		}
 	}
 

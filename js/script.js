@@ -12,6 +12,8 @@ function getLocation() {
 function success(position) {
     geoloc.lat = position.coords.latitude;
 	geoloc.lon = position.coords.longitude;
+	geoloc.altitudeAccuracy = position.coords.altitudeAccuracy;
+	console.log("altitudeAccuracy =" + geoloc.altitudeAccuracy);
 	getMap();
 	console.log(geoloc);
 }
@@ -55,7 +57,7 @@ function getMap() {
 	var mapCanvas = document.getElementById('map-canvas');
 	var mapOptions = {
 		center: new google.maps.LatLng(geoloc.lat,geoloc.lon),
-		zoom: 15,
+		zoom: geoloc.altitudeAccuracy,  												//got to do a lat accuracy here??
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 		}
 	var map = new google.maps.Map(mapCanvas,mapOptions)
